@@ -92,3 +92,5 @@ sw.*
 functions/
 
 public/
+
+.env

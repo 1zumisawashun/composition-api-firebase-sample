@@ -2,9 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">
-        nuxt-firebase
-      </h1>
+      <h1 class="title">nuxt-firebase</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -22,13 +20,26 @@
         >
           GitHub
         </a>
+        <button
+          rel="noopener noreferrer"
+          class="button--grey"
+          @click="sayHello"
+        >
+          Hello
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    sayHello() {
+      console.log("sayHello");
+    },
+  },
+};
 </script>
 
 <style>
@@ -42,16 +53,8 @@ export default {}
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
