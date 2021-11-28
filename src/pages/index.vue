@@ -32,14 +32,18 @@
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    sayHello() {
-      console.log("sayHello");
-    },
+
+<script lang="ts">
+import { defineComponent } from "@vue/composition-api";
+export default defineComponent({
+  setup() {
+    const sayHello = () => {
+      const data: String = "NuxtCompositionAPI";
+      console.log(`Hello,${data}`);
+    };
+    return { sayHello };
   },
-};
+});
 </script>
 
 <style>

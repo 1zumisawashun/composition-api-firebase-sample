@@ -1,17 +1,29 @@
-const functions = require('firebase-functions');
-const { Nuxt } = require('nuxt-start');
+const functions = require("firebase-functions");
+const { Nuxt } = require("nuxt-start");
 
-const nuxtConfig = require('./nuxt.config.js');
+const nuxtConfig = require("./nuxt.config.js");
 
 const config = {
   ...nuxtConfig,
   dev: false,
   debug: false,
-  buildDir: 'nuxt',
+  buildDir: "nuxt",
+  // publicPath: "public"
 };
+
 const nuxt = new Nuxt(config);
 
-exports.ssrapp = functions.https.onRequest(async (req, res) => {
-  await nuxt.ready();
-  nuxt.render(req, res);
-});
+let isReady = false;
+
+async function handleRequest(req, res) {
+  if (!isReady) {
+    try {
+      isReady = await nuxt.ready();
+    } catch (error) {
+      process.exit(1);
+    }
+  }
+  await nuxt.render(req, res);
+}
+
+exports.ssrapp = functions.https.onRequest(handleRequest);
