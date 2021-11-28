@@ -1,3 +1,15 @@
+require("dotenv").config();
+
+const {
+  API_KEY,
+  AUTH_DOMAIN,
+  PROJECT_ID,
+  STORAGE_BUCKET,
+  MESSAGING_SENDER_ID,
+  APP_ID,
+  MEASUREMENT_ID
+} = process.env;
+
 module.exports = {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -23,8 +35,17 @@ module.exports = {
   buildModules: ["@nuxt/typescript-build"],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [],
+  modules: ["@nuxtjs/dotenv"],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {}
+  build: {},
+  env: {
+    API_KEY,
+    AUTH_DOMAIN,
+    PROJECT_ID,
+    STORAGE_BUCKET,
+    MESSAGING_SENDER_ID,
+    APP_ID,
+    MEASUREMENT_ID
+  }
 };

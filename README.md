@@ -1,6 +1,14 @@
-# NuxtJS with SSRモードをfirebaseにデプロイできるボイラープレート
+# temanashi-client
 
-ネットでNuxtJSのSSRモードでfirebaseにデプロイする方法を探してみたんですが、2019年の記事が出てくるけど少し古かったのでデプロイしたいだけでちょっと苦労しました。
+■ template-url  
+https://zenn.dev/sengosha/articles/de4c3bb6ffbe3be2b3c2
 
-自分みたいに無駄な時間を掛からないようボイラープレートをシェアさせて頂きます。
-そのままローカルにクローンしてfirebaseにデプロイできる状態です。
+■ temanashi-client-url  
+https://temanashi-client.web.app/
+
+```
+■フロント
+- Nuxt.js ( SSR ), Composition API, TypeScript, Sass ( ITCSS/RSCSS )
+■サーバー
+- Firebase ( Cloud Functions, Firebase Firestore, Firebase Authentication, Firebase hosting, Cloud Storage )
+```
